@@ -1,0 +1,11 @@
+C:\Users\Samuel\Desktop\lab1aplikacjewebowe\Cars.Domain\bin\Debug\net10.0\Cars.Domain.deps.json
+C:\Users\Samuel\Desktop\lab1aplikacjewebowe\Cars.Domain\bin\Debug\net10.0\Cars.Domain.dll
+C:\Users\Samuel\Desktop\lab1aplikacjewebowe\Cars.Domain\bin\Debug\net10.0\Cars.Domain.pdb
+C:\Users\Samuel\Desktop\lab1aplikacjewebowe\Cars.Domain\obj\Debug\net10.0\Cars.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Samuel\Desktop\lab1aplikacjewebowe\Cars.Domain\obj\Debug\net10.0\Cars.Domain.AssemblyInfoInputs.cache
+C:\Users\Samuel\Desktop\lab1aplikacjewebowe\Cars.Domain\obj\Debug\net10.0\Cars.Domain.AssemblyInfo.cs
+C:\Users\Samuel\Desktop\lab1aplikacjewebowe\Cars.Domain\obj\Debug\net10.0\Cars.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Samuel\Desktop\lab1aplikacjewebowe\Cars.Domain\obj\Debug\net10.0\Cars.Domain.dll
+C:\Users\Samuel\Desktop\lab1aplikacjewebowe\Cars.Domain\obj\Debug\net10.0\refint\Cars.Domain.dll
+C:\Users\Samuel\Desktop\lab1aplikacjewebowe\Cars.Domain\obj\Debug\net10.0\Cars.Domain.pdb
+C:\Users\Samuel\Desktop\lab1aplikacjewebowe\Cars.Domain\obj\Debug\net10.0\ref\Cars.Domain.dll

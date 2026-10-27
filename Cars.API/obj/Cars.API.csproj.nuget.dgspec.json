@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Samuel\\Desktop\\lab1aplikacjewebowe\\Cars.API\\Cars.API.csproj": {}
+    "C:\\Users\\Samuel\\Desktop\\aplikacjewebowe\\Cars.API\\Cars.API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Samuel\\Desktop\\lab1aplikacjewebowe\\Cars.API\\Cars.API.csproj": {
+    "C:\\Users\\Samuel\\Desktop\\aplikacjewebowe\\Cars.API\\Cars.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Samuel\\Desktop\\lab1aplikacjewebowe\\Cars.API\\Cars.API.csproj",
+        "projectUniqueName": "C:\\Users\\Samuel\\Desktop\\aplikacjewebowe\\Cars.API\\Cars.API.csproj",
         "projectName": "Cars.API",
-        "projectPath": "C:\\Users\\Samuel\\Desktop\\lab1aplikacjewebowe\\Cars.API\\Cars.API.csproj",
+        "projectPath": "C:\\Users\\Samuel\\Desktop\\aplikacjewebowe\\Cars.API\\Cars.API.csproj",
         "packagesPath": "C:\\Users\\Samuel\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Samuel\\Desktop\\lab1aplikacjewebowe\\Cars.API\\obj\\",
+        "outputPath": "C:\\Users\\Samuel\\Desktop\\aplikacjewebowe\\Cars.API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Samuel\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -29,11 +29,11 @@
             "framework": "net10.0",
             "targetAlias": "net10.0",
             "projectReferences": {
-              "C:\\Users\\Samuel\\Desktop\\lab1aplikacjewebowe\\Cars.Application\\Cars.Application.csproj": {
-                "projectPath": "C:\\Users\\Samuel\\Desktop\\lab1aplikacjewebowe\\Cars.Application\\Cars.Application.csproj"
+              "C:\\Users\\Samuel\\Desktop\\aplikacjewebowe\\Cars.Application\\Cars.Application.csproj": {
+                "projectPath": "C:\\Users\\Samuel\\Desktop\\aplikacjewebowe\\Cars.Application\\Cars.Application.csproj"
               },
-              "C:\\Users\\Samuel\\Desktop\\lab1aplikacjewebowe\\Cars.Infrastructure\\Cars.Infrastructure.csproj": {
-                "projectPath": "C:\\Users\\Samuel\\Desktop\\lab1aplikacjewebowe\\Cars.Infrastructure\\Cars.Infrastructure.csproj"
+              "C:\\Users\\Samuel\\Desktop\\aplikacjewebowe\\Cars.Infrastructure\\Cars.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\Samuel\\Desktop\\aplikacjewebowe\\Cars.Infrastructure\\Cars.Infrastructure.csproj"
               }
             }
           }
@@ -85,7 +85,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.402/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.403/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.AspNetCore": "(,10.0.32767]",
             "Microsoft.AspNetCore.Antiforgery": "(,10.0.32767]",
@@ -503,14 +503,14 @@
         }
       }
     },
-    "C:\\Users\\Samuel\\Desktop\\lab1aplikacjewebowe\\Cars.Application\\Cars.Application.csproj": {
+    "C:\\Users\\Samuel\\Desktop\\aplikacjewebowe\\Cars.Application\\Cars.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Samuel\\Desktop\\lab1aplikacjewebowe\\Cars.Application\\Cars.Application.csproj",
+        "projectUniqueName": "C:\\Users\\Samuel\\Desktop\\aplikacjewebowe\\Cars.Application\\Cars.Application.csproj",
         "projectName": "Cars.Application",
-        "projectPath": "C:\\Users\\Samuel\\Desktop\\lab1aplikacjewebowe\\Cars.Application\\Cars.Application.csproj",
+        "projectPath": "C:\\Users\\Samuel\\Desktop\\aplikacjewebowe\\Cars.Application\\Cars.Application.csproj",
         "packagesPath": "C:\\Users\\Samuel\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Samuel\\Desktop\\lab1aplikacjewebowe\\Cars.Application\\obj\\",
+        "outputPath": "C:\\Users\\Samuel\\Desktop\\aplikacjewebowe\\Cars.Application\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Samuel\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -528,8 +528,11 @@
             "framework": "net10.0",
             "targetAlias": "net10.0",
             "projectReferences": {
-              "C:\\Users\\Samuel\\Desktop\\lab1aplikacjewebowe\\Cars.Domain\\Cars.Domain.csproj": {
-                "projectPath": "C:\\Users\\Samuel\\Desktop\\lab1aplikacjewebowe\\Cars.Domain\\Cars.Domain.csproj"
+              "C:\\Users\\Samuel\\Desktop\\aplikacjewebowe\\Cars.Domain\\Cars.Domain.csproj": {
+                "projectPath": "C:\\Users\\Samuel\\Desktop\\aplikacjewebowe\\Cars.Domain\\Cars.Domain.csproj"
+              },
+              "C:\\Users\\Samuel\\Desktop\\aplikacjewebowe\\Cars.Infrastructure\\Cars.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\Samuel\\Desktop\\aplikacjewebowe\\Cars.Infrastructure\\Cars.Infrastructure.csproj"
               }
             }
           }
@@ -550,6 +553,20 @@
         "net10.0": {
           "framework": "net10.0",
           "targetAlias": "net10.0",
+          "dependencies": {
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[12.1.1, )"
+            },
+            "FluentValidation.DependencyInjectionExtensions": {
+              "target": "Package",
+              "version": "[12.1.1, )"
+            },
+            "MediatR": {
+              "target": "Package",
+              "version": "[13.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -566,7 +583,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.402/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.403/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.CSharp": "(,4.7.32767]",
             "Microsoft.VisualBasic": "(,10.4.32767]",
@@ -844,14 +861,14 @@
         }
       }
     },
-    "C:\\Users\\Samuel\\Desktop\\lab1aplikacjewebowe\\Cars.Domain\\Cars.Domain.csproj": {
+    "C:\\Users\\Samuel\\Desktop\\aplikacjewebowe\\Cars.Domain\\Cars.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Samuel\\Desktop\\lab1aplikacjewebowe\\Cars.Domain\\Cars.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\Samuel\\Desktop\\aplikacjewebowe\\Cars.Domain\\Cars.Domain.csproj",
         "projectName": "Cars.Domain",
-        "projectPath": "C:\\Users\\Samuel\\Desktop\\lab1aplikacjewebowe\\Cars.Domain\\Cars.Domain.csproj",
+        "projectPath": "C:\\Users\\Samuel\\Desktop\\aplikacjewebowe\\Cars.Domain\\Cars.Domain.csproj",
         "packagesPath": "C:\\Users\\Samuel\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Samuel\\Desktop\\lab1aplikacjewebowe\\Cars.Domain\\obj\\",
+        "outputPath": "C:\\Users\\Samuel\\Desktop\\aplikacjewebowe\\Cars.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Samuel\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -903,7 +920,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.402/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.403/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.CSharp": "(,4.7.32767]",
             "Microsoft.VisualBasic": "(,10.4.32767]",
@@ -1181,14 +1198,14 @@
         }
       }
     },
-    "C:\\Users\\Samuel\\Desktop\\lab1aplikacjewebowe\\Cars.Infrastructure\\Cars.Infrastructure.csproj": {
+    "C:\\Users\\Samuel\\Desktop\\aplikacjewebowe\\Cars.Infrastructure\\Cars.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Samuel\\Desktop\\lab1aplikacjewebowe\\Cars.Infrastructure\\Cars.Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\Samuel\\Desktop\\aplikacjewebowe\\Cars.Infrastructure\\Cars.Infrastructure.csproj",
         "projectName": "Cars.Infrastructure",
-        "projectPath": "C:\\Users\\Samuel\\Desktop\\lab1aplikacjewebowe\\Cars.Infrastructure\\Cars.Infrastructure.csproj",
+        "projectPath": "C:\\Users\\Samuel\\Desktop\\aplikacjewebowe\\Cars.Infrastructure\\Cars.Infrastructure.csproj",
         "packagesPath": "C:\\Users\\Samuel\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Samuel\\Desktop\\lab1aplikacjewebowe\\Cars.Infrastructure\\obj\\",
+        "outputPath": "C:\\Users\\Samuel\\Desktop\\aplikacjewebowe\\Cars.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Samuel\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -1206,8 +1223,8 @@
             "framework": "net10.0",
             "targetAlias": "net10.0",
             "projectReferences": {
-              "C:\\Users\\Samuel\\Desktop\\lab1aplikacjewebowe\\Cars.Domain\\Cars.Domain.csproj": {
-                "projectPath": "C:\\Users\\Samuel\\Desktop\\lab1aplikacjewebowe\\Cars.Domain\\Cars.Domain.csproj"
+              "C:\\Users\\Samuel\\Desktop\\aplikacjewebowe\\Cars.Domain\\Cars.Domain.csproj": {
+                "projectPath": "C:\\Users\\Samuel\\Desktop\\aplikacjewebowe\\Cars.Domain\\Cars.Domain.csproj"
               }
             }
           }
@@ -1256,7 +1273,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.402/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.403/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.CSharp": "(,4.7.32767]",
             "Microsoft.VisualBasic": "(,10.4.32767]",

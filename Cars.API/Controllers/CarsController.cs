@@ -1,75 +1,76 @@
+using Cars.Application.Cars;
 using Cars.Domain;
-using Cars.Infrastructure;
+using FluentValidation;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace Cars.API.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
-public class CarsController(DataContext context) : ControllerBase
+public class CarsController(ISender sender) : ControllerBase
 {
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<Car>>> GetCars()
+    public async Task<ActionResult<IEnumerable<Car>>> GetCars(CancellationToken cancellationToken)
     {
-        return await context.Cars.AsNoTracking().ToListAsync();
+        return Ok(await sender.Send(new GetCarListQuery(), cancellationToken));
     }
 
     [HttpGet("{id:guid}")]
-    public async Task<ActionResult<Car>> GetCar(Guid id)
+    public async Task<ActionResult<Car>> GetCar(Guid id, CancellationToken cancellationToken)
     {
-        var car = await context.Cars.AsNoTracking().FirstOrDefaultAsync(item => item.Id == id);
+        var car = await sender.Send(new DetailsQuery(id), cancellationToken);
         return car is null ? NotFound() : Ok(car);
     }
 
     [HttpPost]
-    public async Task<ActionResult<Car>> CreateCar(Car car)
+    public async Task<ActionResult<Car>> CreateCar(
+        Car car,
+        CancellationToken cancellationToken)
     {
-        if (car.Id == Guid.Empty)
+        try
         {
-            car.Id = Guid.NewGuid();
+            var createdCar = await sender.Send(new CreateCommand(car), cancellationToken);
+            return CreatedAtAction(nameof(GetCar), new { id = createdCar.Id }, createdCar);
         }
-
-        context.Cars.Add(car);
-        await context.SaveChangesAsync();
-
-        return CreatedAtAction(nameof(GetCar), new { id = car.Id }, car);
+        catch (ValidationException exception)
+        {
+            return BadRequest(ToValidationErrors(exception));
+        }
     }
 
     [HttpPut("{id:guid}")]
-    public async Task<IActionResult> UpdateCar(Guid id, Car car)
+    public async Task<IActionResult> UpdateCar(
+        Guid id,
+        Car car,
+        CancellationToken cancellationToken)
     {
-        var existingCar = await context.Cars.FindAsync(id);
-        if (existingCar is null)
+        try
         {
-            return NotFound();
+            return await sender.Send(new EditCommand(id, car), cancellationToken)
+                ? NoContent()
+                : NotFound();
         }
-
-        existingCar.Brand = car.Brand;
-        existingCar.Model = car.Model;
-        existingCar.DoorsNumber = car.DoorsNumber;
-        existingCar.LuggageCapacity = car.LuggageCapacity;
-        existingCar.EngineCapacity = car.EngineCapacity;
-        existingCar.FuelType = car.FuelType;
-        existingCar.ProductionDate = car.ProductionDate;
-        existingCar.AverageFuelConsumption = car.AverageFuelConsumption;
-        existingCar.BodyType = car.BodyType;
-
-        await context.SaveChangesAsync();
-        return NoContent();
+        catch (ValidationException exception)
+        {
+            return BadRequest(ToValidationErrors(exception));
+        }
     }
 
     [HttpDelete("{id:guid}")]
-    public async Task<IActionResult> DeleteCar(Guid id)
+    public async Task<IActionResult> DeleteCar(Guid id, CancellationToken cancellationToken)
     {
-        var car = await context.Cars.FindAsync(id);
-        if (car is null)
-        {
-            return NotFound();
-        }
+        return await sender.Send(new DeleteCommand(id), cancellationToken)
+            ? NoContent()
+            : NotFound();
+    }
 
-        context.Cars.Remove(car);
-        await context.SaveChangesAsync();
-        return NoContent();
+    private static IDictionary<string, string[]> ToValidationErrors(ValidationException exception)
+    {
+        return exception.Errors
+            .GroupBy(error => error.PropertyName)
+            .ToDictionary(
+                group => group.Key,
+                group => group.Select(error => error.ErrorMessage).ToArray());
     }
 }

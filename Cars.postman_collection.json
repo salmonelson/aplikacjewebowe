@@ -69,6 +69,23 @@
         "method": "DELETE",
         "url": "{{baseUrl}}/api/cars/{{carId}}"
       }
+    },
+    {
+      "name": "Create car - validation error",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"brand\": \"\",\n  \"model\": \"\",\n  \"doorsNumber\": 1,\n  \"luggageCapacity\": -10,\n  \"engineCapacity\": 0,\n  \"fuelType\": \"Petrol\",\n  \"productionDate\": \"2035-01-01T00:00:00Z\",\n  \"averageFuelConsumption\": -4.5,\n  \"bodyType\": \"Sedan\"\n}"
+        },
+        "url": "{{baseUrl}}/api/cars"
+      }
     }
   ]
 }

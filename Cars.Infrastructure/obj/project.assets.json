@@ -2927,11 +2927,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Samuel\\Desktop\\lab1aplikacjewebowe\\Cars.Infrastructure\\Cars.Infrastructure.csproj",
+      "projectUniqueName": "C:\\Users\\Samuel\\Desktop\\aplikacjewebowe\\Cars.Infrastructure\\Cars.Infrastructure.csproj",
       "projectName": "Cars.Infrastructure",
-      "projectPath": "C:\\Users\\Samuel\\Desktop\\lab1aplikacjewebowe\\Cars.Infrastructure\\Cars.Infrastructure.csproj",
+      "projectPath": "C:\\Users\\Samuel\\Desktop\\aplikacjewebowe\\Cars.Infrastructure\\Cars.Infrastructure.csproj",
       "packagesPath": "C:\\Users\\Samuel\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Samuel\\Desktop\\lab1aplikacjewebowe\\Cars.Infrastructure\\obj\\",
+      "outputPath": "C:\\Users\\Samuel\\Desktop\\aplikacjewebowe\\Cars.Infrastructure\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Samuel\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -2949,8 +2949,8 @@
           "framework": "net10.0",
           "targetAlias": "net10.0",
           "projectReferences": {
-            "C:\\Users\\Samuel\\Desktop\\lab1aplikacjewebowe\\Cars.Domain\\Cars.Domain.csproj": {
-              "projectPath": "C:\\Users\\Samuel\\Desktop\\lab1aplikacjewebowe\\Cars.Domain\\Cars.Domain.csproj"
+            "C:\\Users\\Samuel\\Desktop\\aplikacjewebowe\\Cars.Domain\\Cars.Domain.csproj": {
+              "projectPath": "C:\\Users\\Samuel\\Desktop\\aplikacjewebowe\\Cars.Domain\\Cars.Domain.csproj"
             }
           }
         }
@@ -2999,7 +2999,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.402/PortableRuntimeIdentifierGraph.json",
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.403/PortableRuntimeIdentifierGraph.json",
         "packagesToPrune": {
           "Microsoft.CSharp": "(,4.7.32767]",
           "Microsoft.VisualBasic": "(,10.4.32767]",

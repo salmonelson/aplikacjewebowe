@@ -1,0 +1,41 @@
+{
+  "cars": [
+    {
+      "brand": "Toyota",
+      "model": "Corolla",
+      "doorsNumber": 5,
+      "luggageCapacity": 475,
+      "engineCapacity": 1800,
+      "fuelType": "Petrol",
+      "productionDate": "2022-05-10",
+      "averageFuelConsumption": 6.4,
+      "bodyType": "Hatchback",
+      "id": "1"
+    },
+    {
+      "id": "2",
+      "brand": "Skoda",
+      "model": "Octavia",
+      "doorsNumber": 5,
+      "luggageCapacity": 600,
+      "engineCapacity": 1500,
+      "fuelType": "Diesel",
+      "productionDate": "2021-03-15",
+      "averageFuelConsumption": 6.8,
+      "bodyType": "Combi"
+    },
+    {
+      "brand": "Kia",
+      "model": "Rio",
+      "doorsNumber": 5,
+      "luggageCapacity": 350,
+      "engineCapacity": 1.4,
+      "fuelType": "Benzyna",
+      "productionDate": "2019-06-27",
+      "averageFuelConsumption": 5.6,
+      "bodyType": "Hatchback",
+      "id": "pAz2aZgMVGY"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

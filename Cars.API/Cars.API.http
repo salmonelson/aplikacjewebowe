@@ -1,6 +1,49 @@
-@Cars.API_HostAddress = http://localhost:5130
+@Cars.API_HostAddress = http://localhost:5080
 
-GET {{Cars.API_HostAddress}}/weatherforecast/
+GET {{Cars.API_HostAddress}}/api/cars
 Accept: application/json
 
 ###
+
+@carId = 11111111-1111-1111-1111-111111111111
+
+GET {{Cars.API_HostAddress}}/api/cars/{{carId}}
+Accept: application/json
+
+###
+
+POST {{Cars.API_HostAddress}}/api/cars
+Content-Type: application/json
+
+{
+  "brand": "Honda",
+  "model": "Civic",
+  "doorsNumber": 5,
+  "luggageCapacity": 420,
+  "engineCapacity": 1.5,
+  "fuelType": "Petrol",
+  "productionDate": "2023-01-01T00:00:00Z",
+  "averageFuelConsumption": 6.2,
+  "bodyType": "Sedan"
+}
+
+###
+
+PUT {{Cars.API_HostAddress}}/api/cars/{{carId}}
+Content-Type: application/json
+
+{
+  "brand": "Toyota",
+  "model": "Corolla Updated",
+  "doorsNumber": 5,
+  "luggageCapacity": 361,
+  "engineCapacity": 1.8,
+  "fuelType": "Hybrid",
+  "productionDate": "2022-06-01T00:00:00Z",
+  "averageFuelConsumption": 4.4,
+  "bodyType": "Hatchback"
+}
+
+###
+
+DELETE {{Cars.API_HostAddress}}/api/cars/{{carId}}

@@ -21,3 +21,4 @@ C:\Users\Samuel\Desktop\aplikacjewebowe\Cars.Domain\obj\Debug\net10.0\Cars.Domai
 C:\Users\Samuel\Desktop\aplikacjewebowe\Cars.Domain\obj\Debug\net10.0\refint\Cars.Domain.dll
 C:\Users\Samuel\Desktop\aplikacjewebowe\Cars.Domain\obj\Debug\net10.0\Cars.Domain.pdb
 C:\Users\Samuel\Desktop\aplikacjewebowe\Cars.Domain\obj\Debug\net10.0\ref\Cars.Domain.dll
+C:\Users\Samuel\Desktop\aplikacjewebowe\Cars.Domain\obj\Debug\net10.0\Cars.Domain.csproj.AssemblyReference.cache

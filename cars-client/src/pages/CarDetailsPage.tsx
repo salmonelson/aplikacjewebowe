@@ -1,12 +1,24 @@
+import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router";
 import type { Car } from "../models/Car";
 import { getCarById } from "../services/carService";
+import { useCarUiStore } from "../store/useCarUiStore";
+import { useAuthStore } from "../store/useAuthStore";
+
+const EMPTY_FAVORITES: string[] = [];
 
 export default function CarDetailsPage() {
   const { id } = useParams();
   const [car, setCar] = useState<Car | null>(null);
   const [error, setError] = useState("");
+  const user = useAuthStore((state) => state.user);
+  const favoriteCarIds = useCarUiStore((state) =>
+    user
+      ? state.favoriteCarIdsByUser[user.id] ?? EMPTY_FAVORITES
+      : EMPTY_FAVORITES,
+  );
+  const toggleFavorite = useCarUiStore((state) => state.toggleFavorite);
 
   useEffect(() => {
     if (!id) {
@@ -18,13 +30,15 @@ export default function CarDetailsPage() {
     getCarById(id, controller.signal)
       .then(setCar)
       .catch((requestError: unknown) => {
-        if (!controller.signal.aborted) {
-          setError(
-            requestError instanceof Error
-              ? requestError.message
-              : "Nie udało się pobrać samochodu.",
-          );
+        if (axios.isCancel(requestError)) {
+          return;
         }
+
+        setError(
+          requestError instanceof Error
+            ? requestError.message
+            : "Nie udało się pobrać samochodu.",
+        );
       });
 
     return () => controller.abort();
@@ -37,6 +51,8 @@ export default function CarDetailsPage() {
   if (!car) {
     return <p>Ładowanie samochodu...</p>;
   }
+
+  const isFavorite = favoriteCarIds.includes(car.id);
 
   return (
     <section>
@@ -59,6 +75,13 @@ export default function CarDetailsPage() {
         <dt>Typ nadwozia</dt>
         <dd>{car.bodyType}</dd>
       </dl>
+      <button
+        type="button"
+        onClick={() => user && toggleFavorite(user.id, car.id)}
+      >
+        {isFavorite ? "Usuń z ulubionych" : "Dodaj do ulubionych"}
+      </button>
+      {" "}
       <Link to="/cars">Wróć do listy</Link>
     </section>
   );

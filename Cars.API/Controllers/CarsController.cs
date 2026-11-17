@@ -2,12 +2,14 @@ using Cars.Application.Cars;
 using Cars.Domain;
 using FluentValidation;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Cars.API.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
+[Authorize]
 public class CarsController(ISender sender) : ControllerBase
 {
     [HttpGet]
@@ -58,6 +60,7 @@ public class CarsController(ISender sender) : ControllerBase
     }
 
     [HttpDelete("{id:guid}")]
+    [Authorize(Roles = "Admin")]
     public async Task<IActionResult> DeleteCar(Guid id, CancellationToken cancellationToken)
     {
         return await sender.Send(new DeleteCommand(id), cancellationToken)

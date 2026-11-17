@@ -1,0 +1,62 @@
+import { create } from "zustand";
+import { persist } from "zustand/middleware";
+
+interface CarUiStore {
+  searchTerm: string;
+  showFavoritesOnly: boolean;
+  favoriteCarIdsByUser: Record<string, string[]>;
+  setUser: (userId: string | null) => void;
+  setSearchTerm: (value: string) => void;
+  setShowFavoritesOnly: (value: boolean) => void;
+  toggleFavorite: (userId: string, carId: string) => void;
+  removeFavorite: (userId: string, carId: string) => void;
+  clearFavorites: (userId: string) => void;
+}
+
+export const useCarUiStore = create<CarUiStore>()(
+  persist(
+    (set) => ({
+      searchTerm: "",
+      showFavoritesOnly: false,
+      favoriteCarIdsByUser: {},
+      setUser: () => set({}),
+      setSearchTerm: (value) => set({ searchTerm: value }),
+      setShowFavoritesOnly: (value) => set({ showFavoritesOnly: value }),
+      toggleFavorite: (userId, carId) =>
+        set((state) => {
+          const current = state.favoriteCarIdsByUser[userId] ?? [];
+          const updated = current.includes(carId)
+            ? current.filter((id) => id !== carId)
+            : [...current, carId];
+          return {
+            favoriteCarIdsByUser: {
+              ...state.favoriteCarIdsByUser,
+              [userId]: updated,
+            },
+          };
+        }),
+      removeFavorite: (userId, carId) =>
+        set((state) => ({
+          favoriteCarIdsByUser: {
+            ...state.favoriteCarIdsByUser,
+            [userId]: (state.favoriteCarIdsByUser[userId] ?? []).filter(
+              (id) => id !== carId,
+            ),
+          },
+        })),
+      clearFavorites: (userId) =>
+        set((state) => ({
+          favoriteCarIdsByUser: {
+            ...state.favoriteCarIdsByUser,
+            [userId]: [],
+          },
+        })),
+    }),
+    {
+      name: "cars-ui-store",
+      partialize: (state) => ({
+        favoriteCarIdsByUser: state.favoriteCarIdsByUser,
+      }),
+    },
+  ),
+);

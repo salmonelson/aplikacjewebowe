@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useEffect, useState } from "react";
 import type { FormEvent } from "react";
 import { Link, useNavigate, useParams } from "react-router";
@@ -21,9 +22,15 @@ export default function EditCarPage() {
         setCar(carData);
       })
       .catch((requestError: unknown) => {
-        if (!controller.signal.aborted) {
-          setError(requestError instanceof Error ? requestError.message : "Nie udało się pobrać samochodu.");
+        if (axios.isCancel(requestError)) {
+          return;
         }
+
+        setError(
+          requestError instanceof Error
+            ? requestError.message
+            : "Nie udało się pobrać samochodu.",
+        );
       });
     return () => controller.abort();
   }, [id]);
